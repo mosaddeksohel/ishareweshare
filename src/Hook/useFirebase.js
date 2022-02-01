@@ -20,7 +20,7 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name };
 
                 setUser(newUser);
-                saveUser(email, name);
+                // saveUser(email, name);
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
@@ -65,13 +65,13 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [auth])
 
-    useEffect(() => {
+    /* useEffect(() => {
         fetch(`https://warm-tor-69858.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
 
-
+ */
 
     const Logout = () => {
         signOut(auth).then(() => {
@@ -83,7 +83,7 @@ const useFirebase = () => {
     }
 
 
-    const saveUser = (email, displayName) => {
+    /* const saveUser = (email, displayName) => {
         const user = { email, displayName };
         fetch('https://warm-tor-69858.herokuapp.com/users', {
             method: 'POST',
@@ -92,7 +92,7 @@ const useFirebase = () => {
             },
             body: JSON.stringify(user)
         })
-    }
+    } */
     return {
         user,
         admin,
@@ -100,7 +100,7 @@ const useFirebase = () => {
         error,
         registerUser,
         LoginUser,
-        saveUser,
+        // saveUser,
         Logout
     };
 }
