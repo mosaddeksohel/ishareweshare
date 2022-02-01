@@ -6,7 +6,6 @@ import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -15,8 +14,11 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
+import ExploreIcon from '@mui/icons-material/Explore';
+import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
+import { Typography } from '@mui/material';
+import { textAlign } from '@mui/system';
 
 const drawerWidth = 240;
 
@@ -100,7 +102,7 @@ const MainContent = () => {
         <div>
             <Box sx={{ display: 'flex' }}>
                 <CssBaseline />
-                <AppBar position="fixed" open={open}>
+                < >
                     <Toolbar>
                         <IconButton
                             color="inherit"
@@ -116,42 +118,55 @@ const MainContent = () => {
                         </IconButton>
 
                     </Toolbar>
-                </AppBar>
+                </>
                 <Drawer variant="permanent" open={open}>
                     <DrawerHeader>
-                        <IconButton onClick={handleDrawerClose}>
+                        <MenuIcon onClick={handleDrawerClose}>
                             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                        </IconButton>
+                        </MenuIcon>
                     </DrawerHeader>
                     <Divider />
                     <List>
-                        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                        {['Home'].map((text, index) => (
                             <ListItem button key={text}>
                                 <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    {index % 2 === 0 ? <HomeIcon /> : <ExploreIcon />}
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        ))}
+                    </List>
+                    <List>
+                        {['Explore'].map((text, index) => (
+                            <ListItem button key={text}>
+                                <ListItemIcon>
+                                    {index % 2 === 0 ? <ExploreIcon /> : <ExploreIcon />}
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        ))}
+                    </List>
+                    <List>
+                        {['Inbox'].map((text, index) => (
+                            <ListItem button key={text}>
+                                <ListItemIcon>
+                                    {index % 2 === 0 ? <SubscriptionsIcon /> : <ExploreIcon />}
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
                             </ListItem>
                         ))}
                     </List>
                     <Divider />
-                    <List>
-                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItem>
-                        ))}
-                    </List>
+
                 </Drawer>
-                <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                    <DrawerHeader />
+                <Box >
+                    <Typography sx={{ textAlign: 'left', paddingTop: '15px' }}>
+                        <iframe width="700" height="399" src="https://www.youtube.com/embed/0aeb09QqaQY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </Typography>
 
                 </Box>
             </Box>
-        </div>
+        </div >
     );
 };
 
