@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import initializeAuthentication from "../Page/Firebase/firebase.init";
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
+import initializeAuthentication from "../Components/Firebase/firebase.init";
 
 // initialize firebase application 
 initializeAuthentication();
