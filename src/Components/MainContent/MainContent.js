@@ -39,8 +39,8 @@ const closedMixin = (theme) => ({
     overflowX: 'hidden',
     width: `calc(${theme.spacing(7)} + 1px)`,
     [theme.breakpoints.up('sm')]: {
-        width: `calc(${theme.spacing(9)} + 1px)`,
-    },
+        width: `calc(${theme.spacing(9)} + 1px)`
+    }
 });
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -161,7 +161,7 @@ const MainContent = () => {
                 </Drawer>
                 <Box >
                     <Typography sx={{ textAlign: 'left', paddingTop: '15px' }}>
-                        <iframe width="700" height="399" src="https://www.youtube.com/embed/0aeb09QqaQY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="700" height="315" src="https://www.youtube.com/embed/0aeb09QqaQY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </Typography>
 
                 </Box>
