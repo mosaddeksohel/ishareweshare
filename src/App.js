@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import AddVideos from './Components/AddVideos/AddVideos';
 import MainContent from './Components/MainContent/MainContent';
 import SearchField from './Components/SearchField/SearchField';
 import Login from './Pages/Login/Login';
@@ -15,6 +16,9 @@ function App() {
             <SearchField></SearchField>
             <MainContent></MainContent>
 
+          </Route>
+          <Route exact path='/addvideos'>
+            <AddVideos></AddVideos>
           </Route>
           <Route exact path="/login">
             <Login></Login>
